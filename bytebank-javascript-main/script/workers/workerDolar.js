@@ -8,5 +8,3 @@ addEventListener('message', () => {
   conectaAPI();
   setInterval(() => conectaAPI(), 5000)
 })
-
-export default workerDolar;

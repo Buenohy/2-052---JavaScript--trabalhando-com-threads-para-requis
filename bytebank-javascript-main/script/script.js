@@ -1,6 +1,4 @@
 import imprimeCotacao from "./imprimeCotacao.js";
-import workerDolar from "./workers/workerDolar.js";
-
 
 const graficoDolar = document.getElementById('graficoDolar');
 
@@ -34,3 +32,10 @@ function adicionarDados(grafico, legenda, dados) {
 
 let workerDolar = new Worker('../script/workers/workerDolar.js');
 workerDolar.postMessage('usd');
+
+workerDolar.addEventListener('message', event => {
+  let tempo = gerarHorario();
+  let valor = event.data.ask;
+  imprimeCotacao('dolar', valor);
+  adicionarDados(graficoParaDolar, tempo, valor);
+})
