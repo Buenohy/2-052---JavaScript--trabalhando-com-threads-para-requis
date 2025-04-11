@@ -19,3 +19,12 @@ async function conectaAPI() {
   const conectaTraduziado = await conecta.json();
   console.log(conectaTraduziado);
 }
+
+function gerarHorario() {
+  let data = new Date();
+  let horario = data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds();
+  console.log(horario);
+  return horario;
+}
+
+gerarHorario();
