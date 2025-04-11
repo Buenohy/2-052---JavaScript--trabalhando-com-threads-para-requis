@@ -18,4 +18,4 @@ async function conectaAPI() {
   console.log(conectaTraduziado);
 }
 
-conectaAPI();
+setInterval(() => conectaAPI(), 5000)
