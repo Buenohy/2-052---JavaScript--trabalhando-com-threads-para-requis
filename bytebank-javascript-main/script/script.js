@@ -11,3 +11,11 @@ const graficoParaDolar = new Chart(graficoDolar, {
     }]
   },
 });
+
+async function conectaAPI() {
+  const conecta = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL');
+  const conectaTraduziado = await conecta.json();
+  console.log(conectaTraduziado);
+}
+
+conectaAPI();
